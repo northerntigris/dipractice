@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявки на регистрацию школ</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="applications">
+    <div class="container">
+        <main class="main-content" id="main-content">
+            <div class="content-header">
+                <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                    <span>Меню</span>
+                </button>
+                <h1 class="page-title">Заявки на регистрацию школ</h1>
+                <a href="dashboard-admin.html" class="btn-back dashboard-admin">
+                    <i class="fas fa-arrow-left"></i> Панель управления
+                </a>
+                <div class="header-actions">
+                    <div class="filter-controls">
+                        <select id="status-filter" class="filter-select">
+                            <option value="all">Все статусы</option>
+                            <option value="pending">На рассмотрении</option>
+                            <option value="approved">Одобренные</option>
+                            <option value="rejected">Отклоненные</option>
+                        </select>
+                        <button id="refresh-applications" class="btn-refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="applications-container">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="applications-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Название школы</th>
+                                    <th>Руководитель</th>
+                                    <th>Дата подачи</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applications-list">
+                                <tr>
+                                    <td colspan="6" class="loading-row">
+                                        <div class="loading-spinner">
+                                            <i class="fas fa-spinner fa-spin"></i> Загрузка данных...
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <div class="pagination-controls">
+                            <button id="prev-page" class="btn-pagination" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span id="page-info">Страница 1</span>
+                            <button id="next-page" class="btn-pagination" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="items-per-page">
+                            <span>Показывать:</span>
+                            <select id="items-per-page" class="items-select">
+                                <option value="10">10</option>
+                                <option value="25" selected>25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно для обработки заявки -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Обработка заявки</h2>
+            <div class="modal-body" id="application-detail">
+                <!-- Данные заявки будут загружены здесь -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-reject" id="reject-application">
+                    <i class="fas fa-times"></i> Отклонить
+                </button>
+                <button class="btn btn-approve" id="approve-application">
+                    <i class="fas fa-check"></i> Одобрить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="applications-page.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

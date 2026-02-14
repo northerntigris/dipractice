@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Панель управления</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="dashboard">
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+          <i class="fas fa-bars"></i>
+          <span>Меню</span>
+        </button>
+        <h1 class="page-title">Панель управления</h1>
+      </div>
+      <p class="welcome-message" id="welcome-message">Добро пожаловать, ...</p>
+
+      <div class="dashboard-content">
+        <div class="dashboard-grid">
+          <div class="card stats-card">
+            <h3 class="card-title">Статистика</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-value" id="total-coordinators">0</div>
+                <div class="stat-label">Всего координаторов</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-value" id="active-olympiads">0</div>
+                <div class="stat-label">Активные олимпиады</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-value" id="completed-olympiads">0</div>
+                <div class="stat-label">Завершённые олимпиады</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card quick-actions">
+            <h3 class="card-title">Быстрые действия</h3>
+            <div class="actions-grid">
+              <button class="action-btn" id="add-coordinator">
+                <i class="fas fa-user-plus"></i>
+                <span>Добавить координатора</span>
+              </button>
+              <button class="action-btn" id="add-olympiad">
+                <i class="fas fa-plus"></i>
+                <span>Назначить проведение олимпиады</span>
+              </button>
+              <button class="action-btn" id="manage-users">
+                <i class="fas fa-users-cog"></i>
+                <span>Управление пользователями</span>
+              </button>
+              <button class="action-btn" id="view-olympiads">
+                <i class="fas fa-list"></i>
+                <span>Все олимпиады</span>
+              </button>
+              <button class="action-btn" id="settings">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card recent-activity">
+          <h3 class="card-title">Последние действия</h3>
+          <div class="activity-list" id="activity-list">
+            <div class="loading-spinner">
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="add-coordinator-modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-coordinator-modal">&times;</span>
+      <h2>Добавление координатора</h2>
+      <form id="add-coordinator-form">
+        <div class="form-group">
+          <label for="coordinator-fio">ФИО</label>
+          <input type="text" id="coordinator-fio" required>
+        </div>
+        <div class="form-group">
+          <label for="coordinator-position">Должность</label>
+          <input type="text" id="coordinator-position" required>
+        </div>
+        <div class="form-group">
+          <label for="coordinator-snils">СНИЛС</label>
+          <input
+            type="text"
+            id="coordinator-snils"
+            required
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="000-000-000 00"
+          >
+        </div>
+        <div class="form-group">
+          <label for="coordinator-email">Email</label>
+          <input type="email" id="coordinator-email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-user-plus"></i>
+          <span>Добавить координатора</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="dashboard-school.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

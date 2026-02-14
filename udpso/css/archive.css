@@ -1,0 +1,233 @@
+/* Стили для блока с годом архива */
+.archive-year {
+  margin-bottom: 30px;
+}
+
+/* Стили для заголовка года в архиве */
+.archive-year h3 {
+  color: var(--dark-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+/* Стили для списка архива */
+.archive-list {
+  list-style: none;
+}
+
+/* Стили для элементов списка архива */
+.archive-list li {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 6px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+/* Стили при наведении на элемент списка */
+.archive-list li:hover {
+  background: rgba(67, 97, 238, 0.1);
+  transform: translateX(5px);
+}
+
+/* Стили для иконки в элементе списка */
+.archive-list li i {
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
+.archive-filters {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.archive-filters label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.archive-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.archive-filter-field {
+  display: grid;
+  gap: 6px;
+}
+
+.archive-filter-field > label {
+  font-size: 0.86rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.archive-filter-field > input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d7e1ea;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  color: #1f2937;
+  background: #fff;
+}
+
+.archive-filter-field > input:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.archive-empty {
+  padding: 18px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #6b7280;
+}
+
+body[data-page="archive"] .olympiad-list {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.archive-card {
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.archive-card__header {
+  align-items: center;
+  gap: 12px;
+}
+
+.archive-card__title-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.archive-card__subject {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.archive-card__status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.archive-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 4px;
+}
+
+.archive-meta-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.archive-meta-item + .archive-meta-item {
+  position: relative;
+}
+
+.archive-meta-item + .archive-meta-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: #e2e8f0;
+}
+
+.archive-meta-label {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.archive-meta-value {
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #1f2937;
+  overflow-wrap: anywhere;
+}
+
+.archive-report-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1e293b;
+  background: #eef2f7;
+  border-radius: 10px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid #dbe4ee;
+  transition: all 0.2s ease;
+}
+
+.archive-report-link:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  text-decoration: none;
+}
+
+@media (max-width: 920px) {
+  .archive-filters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .archive-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .archive-report-link {
+    margin-left: 0;
+  }
+
+  .archive-card__meta {
+    align-items: flex-start;
+    gap: 6px 0;
+  }
+
+  .archive-meta-item {
+    width: 100%;
+  }
+
+  .archive-meta-item + .archive-meta-item::before {
+    display: none;
+  }
+}

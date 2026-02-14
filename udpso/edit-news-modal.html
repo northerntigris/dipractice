@@ -1,0 +1,62 @@
+<div id="edit-news-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal-edit-news">&times;</span>
+        <h2 id="edit-news-title">Редактирование новости</h2>
+        <form id="edit-news-form">
+            <input type="hidden" id="news-id">
+            <div class="form-group">
+                <label for="news-title">Заголовок</label>
+                <input type="text" id="news-title" required>
+            </div>
+            <div class="form-group">
+                <label for="news-date">Дата</label>
+                <input type="date" id="news-date" required>
+            </div>
+            <div class="form-group">
+                <label>Содержание</label>
+                <div class="news-editor-toolbar" role="toolbar" aria-label="Форматирование текста">
+                    <button type="button" class="btn-icon" data-command="bold" title="Жирный">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="italic" title="Курсив">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="underline" title="Подчеркнутый">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="formatBlock" data-value="H2" title="Заголовок 2">
+                        <i class="fas fa-heading"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="formatBlock" data-value="H3" title="Заголовок 3">
+                        <i class="fas fa-heading"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="insertUnorderedList" title="Маркированный список">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="insertOrderedList" title="Нумерованный список">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="formatBlock" data-value="BLOCKQUOTE" title="Цитата">
+                        <i class="fas fa-quote-left"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="createLink" title="Ссылка">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button type="button" class="btn-icon" data-command="removeFormat" title="Очистить форматирование">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                </div>
+                <div id="news-content-editor" class="news-editor" contenteditable="true"></div>
+            </div>
+            <div class="form-group">
+                <label for="news-files">Файлы</label>
+                <input type="file" id="news-files" multiple>
+                <div class="news-file-preview" id="news-file-preview"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                <span>Сохранить</span>
+            </button>
+        </form>
+    </div>
+</div>

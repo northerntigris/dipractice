@@ -1,0 +1,62 @@
+<!-- sidebar.html -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="logo">
+            <i class="fas fa-trophy logo-icon"></i>
+            <h1 class="logo-text">Единая цифровая платформа школьных олимпиад</h1>
+        </div>
+        <button class="toggle-btn" id="toggle-btn" title="Свернуть меню">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li data-page="index">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Главная</span>
+                </a>
+            </li>
+            <li data-page="news">
+                <a href="news.html">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Новости и объявления</span>
+                </a>
+            </li>
+            <li data-page="olympiads">
+                <a href="olympiads.html">
+                    <i class="fas fa-tasks"></i>
+                    <span>Олимпиады</span>
+                </a>
+            </li>
+            <li data-page="archive">
+                <a href="archive.html">
+                    <i class="fas fa-archive"></i>
+                    <span>Архив</span>
+                </a>
+            </li>
+            <li data-page="support">
+                <a href="support.html">
+                    <i class="fas fa-headset"></i>
+                    <span>Поддержка</span>
+                    <span class="support-badge hidden" id="support-unread-badge"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="sidebar-footer-container">
+        <nav class="nav-menu user-menu" id="user-menu">
+            <ul></ul>
+        </nav>
+        <div class="sidebar-footer auth">
+            <button id="login-btn" class="btn">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Войти в систему</span>
+            </button>
+                <button id="logout-btn" class="btn" style="display: none;">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Выйти</span>
+            </button>
+        </div>
+    </div>
+</aside>

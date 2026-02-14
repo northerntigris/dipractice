@@ -1,0 +1,43 @@
+.users-search-card {
+  justify-content: flex-start;
+}
+
+.users-search-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #d6dbe1;
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-width: 320px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.users-search-field i {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.users-search-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+.participants-table thead th[data-sort] {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.participants-table thead th .sort-arrow {
+  margin-left: 6px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.participants-table thead th[data-sort]:hover .sort-arrow {
+  color: #2563eb;
+}

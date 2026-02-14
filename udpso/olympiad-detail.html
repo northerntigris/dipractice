@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Олимпиада</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="olympiad-detail">
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+        <button class="back-btn" onclick="history.back()">
+          <i class="fas fa-arrow-left"></i>
+          <span>Назад</span>
+        </button>
+      </div>
+
+      <div class="olympiad-detail-container">
+        <div class="olympiad-header">
+          <h1 id="olympiad-title">Олимпиада #...</h1>
+          <div class="action-buttons hidden" id="actions">
+            <button id="add-student-btn" class="edit-only"><i class="fas fa-user-plus"></i> Участник</button>
+            <button id="add-expert-btn" class="edit-only"><i class="fas fa-users"></i> Жюри</button>
+            <button id="edit-info-btn"><i class="fas fa-edit"></i> Редактировать</button>
+
+            <!-- Фиксированный контейнер кнопок управления -->
+            <div id="edit-fixed-actions" class="edit-only">
+              <button id="delete-olympiad-btn">
+                <i class="fas fa-trash"></i> Удалить
+              </button>
+              <button id="cancel-edit-btn">
+                <i class="fas fa-times"></i> Отмена
+              </button>
+              <button id="done-edit-btn">
+                <i class="fas fa-save"></i> Сохранить
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="olympiad-section">
+          <h2>Общая информация</h2>
+          <div class="placeholder" id="info-placeholder">Информация об олимпиаде появится здесь.</div>
+          <div id="school-schedule-box" class="card" style="display:none; margin-top: 20px;">
+          <h3 class="card-title">Назначить проведение</h3>
+
+          <p id="school-window-hint" style="margin: 10px 0 12px 0; opacity:.85;"></p>
+
+          <div class="form-group">
+            <label for="school-scheduled-at">Дата и время проведения</label>
+            <input type="datetime-local" id="school-scheduled-at">
+          </div>
+
+          <button class="btn btn-primary" id="school-schedule-save">
+            <i class="fas fa-calendar-check"></i>
+            <span>Назначить</span>
+          </button>
+        </div>
+
+        </div>
+
+        <div class="olympiad-section" id="schools-section" style="display:none;">
+          <h2>Школы, проводящие олимпиаду</h2>
+          <div class="placeholder" id="schools-placeholder">
+            Загрузка…
+          </div>
+        </div>
+
+
+        <div class="olympiad-section">
+          <h2>Список участников</h2>
+          <p id="participants-status-hint" class="status-hint" style="display: none;"></p>
+          <div class="placeholder" id="participants-placeholder" style="display: none;">
+            Пока участников нет.
+          </div>
+          <table class="participants-table" id="participants-table">
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th>Класс</th>
+                <th>Баллы</th>
+                <th>Скан</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- участники будут подставлены через JS -->
+            </tbody>
+          </table>
+          <div class="jury-publish-box" id="jury-publish-box" style="display: none;">
+            <button class="btn btn-primary" id="jury-publish-btn" title="Публикация результатов делает оценки и сканы доступными школе. После публикации редактирование будет недоступно.">
+              <i class="fas fa-check-circle"></i>
+              <span>Сохранить и отправить</span>
+            </button>
+          </div>
+          <div class="school-publish-box" id="school-publish-box" style="display: none;">
+            <div class="school-publish-info">
+              <p id="school-publish-hint">После публикации олимпиада будет перенесена в архив.</p>
+            </div>
+            <button class="btn btn-primary" id="school-publish-results-btn">
+              <i class="fas fa-file-pdf"></i>
+              <span>Опубликовать результаты</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="olympiad-section" id="jury-block">
+          <h2>Жюри</h2>
+          <div class="placeholder" id="jury-placeholder" style="display: none;">
+            Жюри ещё не добавлено.
+          </div>
+          <table class="participants-table" id="jury-table">
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th>Роль</th>
+              </tr>
+            </thead>
+            <tbody id="jury-list-body">
+              <!-- сюда вставляется список жюри -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="olympiad-section" id="school-final-save-box" style="display:none;">
+          <h2>Завершение</h2>
+          <p style="opacity:.85; margin-bottom: 12px;">
+            После заполнения даты и классов, добавления участников и жюри нажмите «Сохранить».
+          </p>
+          <button class="btn btn-primary" id="school-final-save-btn">
+            <i class="fas fa-save"></i>
+            <span>Сохранить</span>
+          </button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="school-detail-modal" style="display: none;">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h3 id="school-detail-title">Детали проведения</h3>
+        <button class="modal-close" id="close-school-detail-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="school-detail-info" id="school-detail-info"></div>
+
+        <div class="olympiad-section">
+          <h2>Участники</h2>
+          <div class="placeholder" id="school-participants-placeholder" style="display: none;">
+            Пока участников нет.
+          </div>
+          <table class="participants-table" id="school-participants-table">
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th>Класс</th>
+                <th>Баллы</th>
+                <th>Скан</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="olympiad-section">
+          <h2>Жюри</h2>
+          <div class="placeholder" id="school-jury-placeholder" style="display: none;">
+            Жюри ещё не добавлено.
+          </div>
+          <table class="participants-table" id="school-jury-table">
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th>Роль</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="add-student-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Добавление участника</h3>
+        <button id="close-add-student" class="modal-close">&times;</button>
+      </div>
+      <form id="add-student-form" class="modal-body">
+        <label>ФИО ученика
+          <input type="text" name="full_name" required />
+        </label>
+        <label>Возраст
+          <input type="number" name="age" min="6" max="25" required />
+        </label>
+        <label>Класс
+          <input type="number" name="grade" min="1" max="11" required />
+        </label>
+        <label>СНИЛС
+          <input type="text" name="snils" pattern="(\d{3}-\d{3}-\d{3} \d{2}|\d{11})" placeholder="000-000-000 00" required />
+        </label>
+        <label>Email (необязательно)
+          <input type="email" name="email" />
+        </label>
+        <button type="submit" class="btn-submit">Добавить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="participant-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Информация об участнике</h3>
+        <button id="close-participant-modal" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="participant-view" class="mode-view"></div>
+        <form id="edit-participant-form" class="mode-edit" style="display: none;"></form>
+      </div>
+
+      <div class="modal-footer">
+        <div class="mode-view modal-actions-row">
+          <button id="edit-participant-btn" class="btn-action">Редактировать</button>
+          <label class="checkbox-field inline">
+            <input type="checkbox" id="participant-reset-password">
+            Сформировать новый пароль
+          </label>
+          <button id="print-participant-btn" class="btn-action">Печать карточки</button>
+        </div>
+        <div class="mode-view modal-actions-row" id="participant-review-box" style="display: none;">
+          <label class="textarea-field">
+            <span>Причина пересмотра</span>
+            <textarea id="participant-review-reason" rows="3" placeholder="Опишите причину пересмотра"></textarea>
+          </label>
+          <button id="send-review-btn" class="btn-action btn-primary">Отправить на пересмотр</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal" id="add-expert-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Добавить члена жюри</h3>
+        <button class="modal-close" id="close-add-expert-modal">&times;</button>
+      </div>
+
+      <form id="add-expert-form" class="modal-body">
+        <!-- ФИО -->
+        <label for="expert-full-name">ФИО:
+          <input type="text" id="expert-full-name" name="full_name" required>
+        </label>
+        <!-- Организация -->
+        <label for="expert-organization">Организация:
+          <input type="text" id="expert-organization" name="organization" required>
+        </label>
+
+        <!-- Паспорт -->
+        <label for="passport-series">Серия паспорта:
+          <input type="text" id="passport-series" name="passport_series" maxlength="4" pattern="\d{4}" title="Введите 4 цифры" required>
+        </label>
+
+        <label for="passport-number">Номер паспорта:
+          <input type="text" id="passport-number" name="passport_number" maxlength="6" pattern="\d{6}" title="Введите 6 цифр" required>
+        </label>
+
+        <label for="passport-issued-by">Кем выдан:
+          <input type="text" id="passport-issued-by" name="passport_issued_by" required>
+        </label>
+        
+        <label for="passport-issued-date">Дата выдачи паспорта:
+          <input type="date" id="passport-issued-date" name="passport_issued_date" required>
+        </label>
+
+        <!-- Дата рождения -->
+        <label for="birthdate">Дата рождения:
+          <input type="date" id="birthdate" name="birthdate" required>
+        </label>
+
+        <!-- СНИЛС -->
+        <label for="snils">СНИЛС:
+          <input type="text" id="snils" name="snils" pattern="(\d{3}-\d{3}-\d{3} \d{2}|\d{11})" placeholder="000-000-000 00" title="Введите СНИЛС в формате 000-000-000 00 или 11 цифр" required>
+        </label>
+
+        <!-- Email -->
+        <label for="expert-email">Email:
+          <input type="email" id="expert-email" name="email" placeholder="name@example.com" required>
+        </label>
+
+        <!-- Роль -->
+        <label for="expert-role">Роль:
+          <select id="expert-role" name="jury_role" required>
+            <option value="председатель жюри">Председатель жюри</option>
+            <option value="член жюри">Член жюри</option>
+          </select>
+        </label>
+
+        <!-- Кнопка -->
+        <button type="submit" class="btn-submit">Добавить члена жюри</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно для просмотра/редактирования члена жюри -->
+  <div class="modal" id="jury-modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Информация о члене жюри</h3>
+        <button class="modal-close" id="close-jury-modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Режим просмотра -->
+        <span id="jury-id-span" style="display: none;"></span>
+        <div id="jury-view" class="mode-view"></div>
+
+        <form id="edit-jury-form" class="mode-edit" style="display: none;">
+          <input type="hidden" id="jury-id-input">
+
+          <label>ФИО:</label>
+          <input type="text" id="jury-full-name-input" required>
+
+          <label>Организация:</label>
+          <input type="text" id="jury-organization-input" required>
+
+          <label>Роль:</label>
+          <select id="jury-role-input" required>
+            <option value="председатель жюри">Председатель жюри</option>
+            <option value="член жюри">Член жюри</option>
+          </select>
+
+          <label>СНИЛС:</label>
+          <input type="text" id="jury-snils-input" pattern="(\d{3}-\d{3}-\d{3} \d{2}|\d{11})" placeholder="000-000-000 00" title="Введите СНИЛС в формате 000-000-000 00 или 11 цифр" required>
+
+          <label>Серия паспорта:</label>
+          <input type="text" id="jury-passport-series-input" required>
+
+          <label>Номер паспорта:</label>
+          <input type="text" id="jury-passport-number-input" required>
+
+          <label>Кем выдан:</label>
+          <input type="text" id="jury-issued-by-input" required>
+
+          <label>Дата выдачи:</label>
+          <input type="date" id="jury-issued-date-input" required>
+
+          <label>Дата рождения:</label>
+          <input type="date" id="jury-birthdate-input" required>
+
+          <button type="submit" class="btn-submit">Сохранить</button>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <div class="mode-view modal-actions-row">
+          <label class="checkbox-field inline">
+            <input type="checkbox" id="jury-reset-password">
+            Сформировать новый пароль
+          </label>
+          <button id="print-jury-btn" class="btn-action">Печать карточки</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="olympiad-detail.js"></script>
+  <script src="add-expert.js"></script>
+</body>
+</html>

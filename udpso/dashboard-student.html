@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный кабинет ученика</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body data-page="profile">
+  <div class="container">
+    <!-- Сайдбар будет загружен автоматически через main.js -->
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+          <i class="fas fa-bars"></i>
+          <span>Меню</span>
+        </button>
+        <h1 class="page-title">Личный кабинет</h1>
+      </div>
+
+    <div class="welcome-box">
+        <i class="fas fa-user-circle icon"></i>
+        <span id="greeting" class="welcome-text">Добро пожаловать!</span>
+    </div>
+
+      <div class="dashboard-content">
+        <div class="card quick-actions">
+          <h2 class="card-title">Быстрые действия</h2>
+          <div class="actions-grid">
+            <button class="action-btn" id="settings">
+              <i class="fas fa-cog"></i>
+              <span>Настройки</span>
+            </button>
+          </div>
+        </div>
+        <section class="dashboard-section">
+          <h2 class="section-title">Мои олимпиады</h2>
+          <div class="table-controls">
+            <div class="table-search">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="olympiads-search"
+                placeholder="Поиск по названию, дате или школе"
+                aria-label="Поиск по названию, дате или школе"
+              />
+            </div>
+          </div>
+          <table class="olympiads-table">
+            <thead>
+              <tr>
+                <th>
+                  <button type="button" class="sort-button" data-sort="name">
+                    Название <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
+                <th>
+                  <button type="button" class="sort-button" data-sort="date">
+                    Дата <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
+                <th>
+                  <button type="button" class="sort-button" data-sort="status">
+                    Статус <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
+                <th>
+                  <button type="button" class="sort-button" data-sort="organization">
+                    Школа <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
+                <th>
+                  <button type="button" class="sort-button" data-sort="score">
+                    Баллы <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
+                <th>Моя работа</th>
+              </tr>
+            </thead>
+            <tbody id="student-olympiads-body">
+              <!-- строки будут добавлены через JS -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="dashboard-student.js"></script>
+
+  <div class="modal" id="olympiad-detail-modal" aria-hidden="true">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h2>Информация об олимпиаде</h2>
+        <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="olympiad-detail-body" class="olympiad-detail-list"></div>
+        <p id="appeal-hint" class="appeal-hint" hidden></p>
+      </div>
+      <div class="modal-footer modal-actions">
+        <button type="button" id="open-appeal" class="btn-submit">Подать апелляцию</button>
+        <button type="button" class="btn-secondary close-modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="appeal-modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Апелляция</h2>
+        <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+      <form id="appeal-form" class="modal-body">
+        <input type="hidden" id="appeal-olympiad-id" name="olympiad_id" />
+        <label>
+          Подробное описание несогласия
+          <textarea id="appeal-description" name="description" rows="5" required></textarea>
+        </label>
+        <label>
+          Файлы (можно несколько)
+          <input type="file" id="appeal-files" name="files[]" multiple />
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn-submit">Отправить</button>
+          <button type="button" class="btn-secondary close-modal">Закрыть</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

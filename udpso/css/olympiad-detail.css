@@ -1,0 +1,786 @@
+.olympiad-detail-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.olympiad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.olympiad-header h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+    
+.action-buttons button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #3498db;
+    color: white;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+    
+.action-buttons button:hover {
+    background: #2c80b4;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #1f2a37;
+    margin-bottom: 12px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    background: #f8fafc;
+}
+
+.checkbox-field.inline {
+    margin-bottom: 0;
+}
+
+.checkbox-field input[type="checkbox"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #2c80b4;
+}
+
+.checkbox-field label {
+    margin: 0;
+}
+
+.modal-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.modal-actions-row .textarea-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 320px;
+    min-width: 220px;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.modal-actions-row .textarea-field textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #d7dde5;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.modal-actions-row .textarea-field textarea:focus {
+    outline: none;
+    border-color: #2c80b4;
+    box-shadow: 0 0 0 2px rgba(44, 128, 180, 0.15);
+}
+
+.modal-actions-row .checkbox-field {
+    flex: 1 1 240px;
+}
+
+.modal-actions-row .btn-primary,
+.modal-actions-row .btn-outline {
+    margin-top: 0;
+}
+    
+.olympiad-section {
+    margin-top: 24px;
+}
+    
+.olympiad-section h2 {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 12px;
+}
+
+.status-hint {
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.report-card {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.report-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #1f2937;
+}
+
+.report-card__title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.report-card__subtitle {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.report-card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .report-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .report-card__btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+#school-final-save-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+#school-final-save-box .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#school-final-save-box .btn-primary:hover {
+  background: #1d4ed8;
+}
+
+#school-final-save-box .btn-primary:active {
+  transform: translateY(1px);
+}
+
+#school-final-save-box .btn-primary i {
+  font-size: 1rem;
+}
+
+.modal-content.modal-large {
+  max-width: 960px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.school-detail-info {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  color: #1f2937;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#schools-section .status-tag {
+  margin-top: 4px;
+}
+
+#schools-section .status-upcoming {
+  background: #f1c40f;
+  color: #ffffff;
+}
+
+#schools-section .status-ongoing {
+  background: #fdebd0;
+  color: #a04000;
+}
+
+#schools-section .status-completed {
+  background: #d5f5e3;
+  color: #1e8449;
+}
+
+#schools-section .status-archived {
+  background: #eceff1;
+  color: #546e7a;
+}
+
+#schools-section .status-cancelled {
+  background: #f5b7b1;
+  color: #943126;
+}
+
+    
+.placeholder {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    color: #999;
+    text-align: center;
+}
+
+.participants-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.participants-table th,
+.participants-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+/* Центрируем колонку "Класс" */
+.participants-table th:nth-child(2),
+.participants-table td:nth-child(2) {
+  text-align: center;
+  width: 90px; /* можно 70-110 по вкусу */
+}
+
+
+.participants-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.participants-table tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+
+body.jury-view .participants-table tr:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+body.is-setup .participants-table tr:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+.score-editor,
+.upload-editor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.work-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-file-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.work-file-item a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.work-file-item a:hover {
+  text-decoration: underline;
+}
+
+.icon-btn.delete-work-btn {
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  border-radius: 6px;
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.icon-btn.delete-work-btn:hover {
+  background: #ffe4e6;
+  border-color: #fda4af;
+}
+
+.work-display .add-work-btn {
+  margin-top: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+  border-radius: 7px;
+}
+
+.jury-publish-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.jury-publish-box .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.school-publish-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.school-publish-info {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.school-publish-box .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-editor .score-input {
+  width: 90px;
+}
+
+.participants-table td:last-child,
+.participants-table th:last-child {
+  text-align: center;
+}
+
+.participants-table.public-view th:nth-child(4),
+.participants-table.public-view td:nth-child(4) {
+  display: none;
+}
+
+#participant-modal .modal-content {
+  max-width: 500px;
+  padding: 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  max-height: 90vh;
+}
+
+#participant-modal .modal-body label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+#participant-modal input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#participant-modal .modal-body p {
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222;
+}
+
+#participant-modal .modal-body p strong {
+  display: inline-block;
+  min-width: 140px;
+  color: #444;
+}
+
+
+#participant-modal .modal-footer button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+#participant-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#participant-modal .modal-footer .btn-action,
+#participant-modal .modal-footer .btn-submit {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+#participant-modal .modal-footer .btn-action:hover,
+#participant-modal .modal-footer .btn-submit:hover {
+  background-color: #2563eb;
+}
+
+#edit-participant-form label {
+  margin-bottom: 0;
+}
+
+#participant-modal .modal-footer .mode-edit {
+  margin-top: 10px; /* уменьшаем отступ до кнопки */
+}
+
+#jury-modal .modal-content {
+  max-width: 500px;
+  padding: 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  max-height: 90vh;
+}
+
+#jury-modal .modal-body label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+#jury-modal input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#jury-modal .modal-body p {
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222;
+}
+
+#jury-modal .modal-body p strong {
+  display: inline-block;
+  min-width: 140px;
+  color: #444;
+}
+
+#jury-modal .modal-footer button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+#jury-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#jury-modal .modal-footer .btn-action,
+#jury-modal .modal-footer .btn-submit {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+#jury-modal .modal-footer .btn-action:hover,
+#jury-modal .modal-footer .btn-submit:hover {
+  background-color: #2563eb;
+}
+
+#edit-jury-form label {
+  margin-bottom: 0;
+}
+
+#edit-participant-form {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#add-expert-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-expert-modal .modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+#add-expert-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#add-expert-modal label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#add-expert-modal input,
+#add-expert-modal select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#add-expert-modal input:focus,
+#add-expert-modal select:focus {
+  border-color: #3498db;
+  outline: none;
+  background-color: #f9fcff;
+}
+
+/* olympiad-detail: кнопки добавления видны только в режиме редактирования */
+.edit-only { display: none !important; }
+.is-editing .edit-only { display: inline-flex !important; }
+
+/* В режиме редактирования скрываем кнопку "Редактировать" */
+.is-editing #edit-info-btn { display: none !important; }
+
+/* Цвета для новых кнопок */
+#cancel-edit-btn { background: #7f8c8d; }
+#delete-olympiad-btn { background: #e74c3c; }
+
+
+/* колонка действий (✎ / ✕) */
+.actions-col { width: 1%; white-space: nowrap; text-align: right; }
+.icon-btn{
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+
+  transition: transform .08s ease, background .15s ease, border-color .15s ease;
+}
+
+.icon-btn:hover{
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.icon-btn:active{
+  transform: translateY(1px);
+}
+
+.icon-btn.delete-participant-mini,
+.icon-btn.delete-jury-mini{
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.icon-btn.delete-participant-mini:hover,
+.icon-btn.delete-jury-mini:hover{
+  background: #ffe4e6;
+  border-color: #fda4af;
+}
+
+/* setup=1: фикс-контейнер кнопок редактирования не показываем вообще */
+body.is-setup #edit-fixed-actions {
+  display: none !important;
+}
+
+/* setup=1: форма общей информации */
+.setup-info-form {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.setup-info-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.setup-info-form .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.setup-info-form label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.setup-info-form input[type="text"],
+.setup-info-form input[type="datetime-local"],
+.setup-info-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.setup-info-form textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.setup-info-form input:focus,
+.setup-info-form textarea:focus {
+  border-color: rgba(0,0,0,0.25);
+}
+
+.participant-appeal-badge {
+  display: inline-flex;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.participant-appeal-badge.pending {
+  background: #fff3cd;
+  color: #7a5b00;
+}
+
+.participant-appeal-badge.resolved {
+  background: #e8f7ef;
+  color: #1b7a46;
+}
+
+.participant-appeal-panel {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dfe6e9;
+  background: #f8fafc;
+}
+
+.participant-appeal-panel.pending {
+  border-color: #ffe08a;
+  background: #fffdf3;
+}
+
+.appeal-files {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.appeal-response-box {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.appeal-notification-text {
+  margin-top: 6px;
+  color: #4b5563;
+  font-size: 14px;
+}

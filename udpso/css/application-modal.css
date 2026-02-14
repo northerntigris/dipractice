@@ -1,0 +1,153 @@
+/* application-modal.css */
+#application-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#application-modal .modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#application-modal .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+#application-modal .close-modal:hover {
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+#application-modal h2 {
+    margin-top: 0;
+    padding: 20px 20px 10px;
+    color: var(--dark-color);
+    border-bottom: 1px solid #eee;
+}
+
+#application-modal .modal-body {
+    padding: 0 20px 20px;
+}
+
+.application-detail {
+    margin-bottom: 15px;
+}
+
+.application-detail label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+.application-detail div {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    word-break: break-word;
+}
+
+#application-modal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+#application-modal .btn {
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+#application-modal .btn i {
+    font-size: 0.9em;
+}
+
+#application-modal .btn-approve {
+    background: #28a745;
+    color: white;
+}
+
+#application-modal .btn-approve:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+#application-modal .btn-reject {
+    background: #dc3545;
+    color: white;
+}
+
+#application-modal .btn-reject:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #application-modal .modal-content {
+        width: 95%;
+    }
+    
+    #application-modal .modal-footer {
+        flex-direction: column;
+    }
+    
+    #application-modal .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

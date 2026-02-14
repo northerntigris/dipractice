@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="dashboard">
+    <div class="container">
+        <main class="main-content" id="main-content">
+            <div class="content-header">
+                <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                    <span>Меню</span>
+                </button>
+                <h1 class="page-title">Панель администратора</h1>
+                
+                <div class="header-actions">
+                    <div class="notifications-badge" id="applications-badge">
+                        <i class="fas fa-school"></i>
+                        <span class="badge-count">0</span>
+                        <div class="applications-dropdown" id="applications-dropdown">
+                            <div class="dropdown-header">
+                                <h3>Заявки на регистрацию</h3>
+                                <div class="dropdown-actions">
+                                    <button class="btn-refresh" id="refresh-applications">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="dropdown-content" id="applications-list">
+                                <div class="loading-spinner">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="applications.html">Все заявки</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-grid">
+                    <div class="card stats-card">
+                        <h3 class="card-title">Статистика</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-value" id="pending-applications">0</div>
+                                <div class="stat-label">Заявок на рассмотрении</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="total-users">0</div>
+                                <div class="stat-label">Всего пользователей</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="admin-total-schools">0</div>
+                                <div class="stat-label">Всего организаций</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card quick-actions">
+                        <h3 class="card-title">Быстрые действия</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" id="add-moderator">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Добавить модератора</span>
+                            </button>
+                            <button class="action-btn" id="manage-users">
+                                <i class="fas fa-users-cog"></i>
+                                <span>Управление пользователями</span>
+                            </button>
+                            <button class="action-btn" id="view-all-applications">
+                                <i class="fas fa-list-ul"></i>
+                                <span>Все заявки</span>
+                            </button>
+                            <button class="action-btn" id="system-settings">
+                                <i class="fas fa-cog"></i>
+                                <span>Настройки системы</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card recent-activity">
+                    <h3 class="card-title">Последние действия</h3>
+                    <div class="activity-list" id="activity-list">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно для обработки заявки -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Обработка заявки</h2>
+            <div class="modal-body" id="application-detail">
+                <!-- Данные заявки будут загружены здесь -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-reject" id="reject-application">
+                    <i class="fas fa-times"></i> Отклонить
+                </button>
+                <button class="btn btn-approve" id="approve-application">
+                    <i class="fas fa-check"></i> Одобрить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard-admin.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

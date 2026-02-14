@@ -1,0 +1,486 @@
+/* dashboard.css */
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stats-card {
+    padding: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.quick-actions {
+    padding: 20px;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    min-height: 100px;
+}
+
+.action-btn:hover {
+    background: rgba(67, 97, 238, 0.05);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
+}
+
+.action-btn i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.action-btn span {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 18px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.btn-primary i {
+    color: #fff;
+}
+
+.settings-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.settings-row .form-group {
+    flex: 1;
+    min-width: 240px;
+    margin-bottom: 0;
+}
+
+.settings-row .btn-primary {
+    height: 44px;
+    margin-bottom: 2px;
+}
+
+.muted-text {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.email-code-section {
+    margin-top: 12px;
+}
+
+.recent-activity {
+    padding: 20px;
+}
+
+.activity-list {
+    margin-top: 15px;
+}
+
+.activity-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-school {
+    background: rgba(72, 149, 239, 0.1);
+    color: var(--accent-color);
+}
+
+.icon-user {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.icon-olympiad {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.activity-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.empty-message {
+    padding: 12px 0;
+    color: #6c757d;
+    text-align: center;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: var(--accent-color);
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.table-action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.table-action-btn:hover {
+    background: #e2e8f0;
+}
+
+.table-action-btn.action-delete {
+    background: rgba(220, 53, 69, 0.08);
+    border-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+.table-action-btn.action-delete:hover {
+    background: rgba(220, 53, 69, 0.16);
+}
+
+/* Модальное окно заявки */
+#application-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#application-modal .modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.application-detail {
+    margin-bottom: 15px;
+}
+
+.application-detail label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.application-detail div {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-approve {
+    background: #28a745 !important;
+}
+
+.btn-reject {
+    background: #dc3545 !important;
+}
+
+.dashboard-content {
+    display: grid;
+    gap: 20px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.notifications-badge {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(248, 249, 250, 0.8);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.notifications-badge:hover {
+    background: rgba(67, 97, 238, 0.1);
+}
+
+.notifications-badge i {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.badge-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.welcome-box {
+  background: #eef5ff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.welcome-box i {
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.welcome-box strong {
+  font-weight: 600;
+}
+
+#jury-appeal-modal .modal-content {
+  max-width: 760px;
+}
+
+#jury-appeal-response-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  align-content: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#jury-appeal-response-form textarea,
+#jury-appeal-response-form input[type="number"],
+#jury-appeal-response-form input[type="file"] {
+  width: 100%;
+}
+
+
+.jury-appeal-response {
+  background: #f7faff;
+  border-top: 1px solid #e2e8f0;
+  padding: 14px;
+  border-radius: 0 0 12px 12px;
+}
+
+.jury-appeal-response label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.jury-appeal-response textarea,
+.jury-appeal-response input[type="number"],
+.jury-appeal-response input[type="file"] {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  font-weight: 400;
+}
+
+.jury-appeal-response textarea:focus,
+.jury-appeal-response input[type="number"]:focus,
+.jury-appeal-response input[type="file"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+
+.jury-appeal-response {
+  display: block;
+}
+
+.jury-appeal-response-card {
+  width: 100%;
+  max-width: none;
+  background: #ffffff;
+  border: 1px solid #dbe7ff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
+}
+
+.jury-appeal-response-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.jury-appeal-response-fields {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.jury-appeal-response-fields > label,
+.jury-appeal-response-fields > .textarea-field,
+.jury-appeal-response-fields > button {
+  width: 100%;
+}
+
+.jury-appeal-submit {
+  justify-self: stretch;
+  min-width: 0;
+}

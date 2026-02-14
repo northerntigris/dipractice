@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --dark-color: #1b263b;
+  --light-color: #f8f9fa;
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 80px;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s ease;
+  --footer-bg: var(--dark-color);
+  --footer-text: rgba(255, 255, 255, 0.8);
+  --footer-link: var(--accent-color);
+}

@@ -1,0 +1,117 @@
+@import 'variables.css';
+@import 'base.css';
+@import 'sidebar.css';
+@import 'footer.css';
+@import 'home.css';
+@import 'olympiad.css';
+@import 'archive.css';
+@import 'animations.css';
+@import 'auth-modal.css';
+@import 'edit-news-modal.css';
+@import 'register-school-modal.css';
+@import 'dashboard.css';
+@import 'applications-list.css';
+@import 'applications-page.css';
+@import 'application-detail.css';
+@import 'add-moderator-modal.css';
+@import 'application-modal.css';
+@import 'create-olympiad-modal.css';
+@import 'all-olympiads.css';
+@import 'olympiad-detail.css';
+@import 'dashboard-student.css';
+@import 'add-coordinator-modal.css';
+@import 'users.css';
+@import 'support.css';
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+  }
+  
+  .sidebar.collapsed {
+    left: 0;
+    width: 100px;
+  }
+  
+  .sidebar.expanded {
+    left: 0;
+    width: 280px;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .olympiad-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: 20px 15px;
+  }
+}
+
+/* olympiad-detail: фиксированный контейнер кнопок управления */
+body[data-page="olympiad-detail"].is-editing #edit-fixed-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Кнопки внутри контейнера */
+#edit-fixed-actions button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Цвета */
+#edit-fixed-actions #done-edit-btn {
+  background: #2ecc71;
+}
+
+#edit-fixed-actions #cancel-edit-btn {
+  background: #7f8c8d;
+}
+
+#edit-fixed-actions #delete-olympiad-btn {
+  background: #e74c3c;
+}
+
+/* Мобильная версия — вертикально */
+@media (max-width: 576px) {
+  body[data-page="olympiad-detail"].is-editing #edit-fixed-actions {
+    flex-direction: column;
+    right: 16px;
+    bottom: 16px;
+  }
+}

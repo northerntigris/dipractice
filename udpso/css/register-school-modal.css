@@ -1,0 +1,286 @@
+@keyframes fadeInModal {
+    from { 
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#register-school-modal .modal-content,
+#join-platform-modal .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+/* Описание формы */
+#register-school-modal .form-description,
+#join-platform-modal .form-description {
+    margin: 10px 0 20px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* #register-school-modal .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+} */
+
+#register-school-modal .close-modal,
+#join-platform-modal .close-modal {
+    position: sticky;
+    top: 10px;
+    left: 100%;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#register-school-modal .close-modal:hover,
+#join-platform-modal .close-modal:hover {
+    color: #333;
+}
+
+/* Стили для заголовков внутри формы */
+#register-school-modal h3,
+#join-platform-modal h3 {
+    margin: 25px 0 15px;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Стили для групп полей формы */
+#register-school-modal .form-group,
+#join-platform-modal .form-group {
+    margin-bottom: 20px;
+}
+
+#register-school-modal label,
+#join-platform-modal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+
+#register-school-modal input[type="text"],
+#register-school-modal input[type="tel"],
+#register-school-modal input[type="email"],
+#register-school-modal input[type="date"],
+#register-school-modal input[type="file"],
+#register-school-modal select,
+#register-school-modal textarea,
+#join-platform-modal input[type="text"],
+#join-platform-modal input[type="tel"],
+#join-platform-modal input[type="email"],
+#join-platform-modal input[type="date"],
+#join-platform-modal input[type="file"],
+#join-platform-modal select,
+#join-platform-modal textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+#register-school-modal select,
+#join-platform-modal select {
+    background: white;
+}
+
+#register-school-modal .region-select {
+    max-height: 260px;
+}
+
+#register-school-modal .region-select:focus {
+    max-height: 260px;
+}
+
+#register-school-modal input:focus,
+#register-school-modal textarea:focus,
+#join-platform-modal input:focus,
+#join-platform-modal textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.1);
+}
+
+/* Стили для кнопки отправки */
+#register-school-modal .btn-primary,
+#join-platform-modal .btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#register-school-modal .btn-primary:hover,
+#join-platform-modal .btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#register-school-modal .btn-primary i,
+#join-platform-modal .btn-primary i {
+    font-size: 1rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #register-school-modal .modal-content,
+    #join-platform-modal .modal-content {
+        padding: 20px 15px;
+    }
+    
+    #register-school-modal h3,
+    #join-platform-modal h3 {
+        margin: 20px 0 10px;
+    }
+}
+
+/* Добавим в конец файла */
+
+/* Стилизация скроллбара */
+#register-school-modal .modal-content::-webkit-scrollbar,
+#join-platform-modal .modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#register-school-modal .modal-content::-webkit-scrollbar-track,
+#join-platform-modal .modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#register-school-modal .modal-content::-webkit-scrollbar-thumb,
+#join-platform-modal .modal-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+#register-school-modal .modal-content::-webkit-scrollbar-thumb:hover,
+#join-platform-modal .modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Фиксируем крестик */
+#register-school-modal .close-modal,
+#join-platform-modal .close-modal {
+    position: sticky;
+    top: 10px;
+    left: 100%;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#join-platform-modal .form-section {
+    padding: 18px;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    background: #fbfbfd;
+    margin-bottom: 20px;
+}
+
+#register-school-modal .form-section {
+    padding: 18px;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    background: #fbfbfd;
+    margin-bottom: 20px;
+}
+
+#join-platform-modal .form-section h3 {
+    margin-top: 0;
+}
+
+#register-school-modal .form-section h3 {
+    margin-top: 0;
+}
+
+#join-platform-modal input[type="file"] {
+    padding: 10px 12px;
+    background: white;
+}
+
+#register-school-modal input[type="file"] {
+    padding: 10px 12px;
+    background: white;
+}
+
+#join-platform-modal .form-hint {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+#register-school-modal .form-hint {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+#register-school-modal .password-option-group {
+    margin-bottom: 0;
+}
+
+#register-school-modal .password-option-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.35;
+    cursor: pointer;
+}
+
+#register-school-modal .password-option-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex: 0 0 auto;
+}

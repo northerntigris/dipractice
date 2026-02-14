@@ -1,0 +1,179 @@
+/* Стили для модального окна добавления модератора */
+#add-moderator-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-moderator-modal .modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+#add-moderator-modal .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+}
+
+#add-moderator-modal .close-modal:hover {
+    color: #333;
+}
+
+#add-moderator-modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+}
+
+#add-moderator-modal .form-group {
+    margin-bottom: 20px;
+}
+
+#add-moderator-modal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+#add-moderator-modal input[type="text"],
+#add-moderator-modal input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+#add-moderator-modal input[type="text"]:focus,
+#add-moderator-modal input[type="email"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.1);
+}
+
+/* Стили для чекбокса (уже добавлены ранее, но продублируем для полноты) */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #eee;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+#add-moderator-modal .btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#add-moderator-modal .btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-moderator-modal .btn-primary i {
+    font-size: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+    #add-moderator-modal .modal-content {
+        padding: 20px 15px;
+    }
+    
+    #add-moderator-modal h2 {
+        font-size: 1.3rem;
+    }
+}

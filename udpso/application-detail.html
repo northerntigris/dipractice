@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали заявки</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="application-detail">
+    <div class="container">
+        <main class="main-content" id="main-content">
+            <div class="content-header">
+                <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                    <span>Меню</span>
+                </button>
+                <h1 class="page-title">Детали заявки</h1>
+                
+                <div class="header-actions">
+                    <a href="applications.html" class="btn-back">
+                        <i class="fas fa-arrow-left"></i> Назад к списку
+                    </a>
+                </div>
+            </div>
+            
+            <div class="application-detail-container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title" id="application-title">Загрузка...</h2>
+                        <div class="application-status" id="application-status">
+                            <span class="status-badge">Загрузка...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="detail-grid">
+                            <div class="detail-section">
+                                <h3 class="section-title">
+                                    <i class="fas fa-school"></i> Информация об организации
+                                </h3>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Полное название:</div>
+                                    <div class="detail-value" id="school-full-name">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">ОГРН:</div>
+                                    <div class="detail-value" id="school-ogrn">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Дата регистрации:</div>
+                                    <div class="detail-value" id="organization-registration-date">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Юридический адрес:</div>
+                                    <div class="detail-value" id="school-address">-</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h3 class="section-title">
+                                    <i class="fas fa-user-tie"></i> Руководитель
+                                </h3>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">ФИО:</div>
+                                    <div class="detail-value" id="director-fio">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Должность:</div>
+                                    <div class="detail-value" id="director-position">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">ИНН:</div>
+                                    <div class="detail-value" id="director-inn">-</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h3 class="section-title">
+                                    <i class="fas fa-address-card"></i> Контактная информация
+                                </h3>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Контактный телефон:</div>
+                                    <div class="detail-value" id="contact-phone">-</div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Email:</div>
+                                    <div class="detail-value" id="contact-email">-</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h3 class="section-title">
+                                    <i class="fas fa-history"></i> История заявки
+                                </h3>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-label">Дата подачи:</div>
+                                    <div class="detail-value" id="created-at">-</div>
+                                </div>
+                                
+                                <div class="detail-row" id="processed-row" style="display: none;">
+                                    <div class="detail-label">Дата обработки:</div>
+                                    <div class="detail-value" id="processed-at">-</div>
+                                </div>
+                                
+                                <div class="detail-row" id="processed-by-row" style="display: none;">
+                                    <div class="detail-label">Обработано:</div>
+                                    <div class="detail-value" id="processed-by">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer" id="action-buttons">
+                        <!-- Кнопки действий будут добавлены здесь -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="application-detail.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все олимпиады</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="all-olympiads">
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+        <h1 class="page-title">Все олимпиады</h1>
+        <button class="back-btn" onclick="history.back()">
+          <i class="fas fa-arrow-left"></i> Назад
+        </button>
+      </div>
+
+      <div class="dashboard-content">
+        <section class="dashboard-section">
+          <div class="filter-card">
+            <label for="status-filter">Фильтр по статусу:</label>
+            <select id="status-filter">
+              <option value="all">Все</option>
+              <option value="upcoming">Ожидается</option>
+              <option value="ongoing">В процессе</option>
+              <option value="completed">Завершена</option>
+              <option value="archived">Архив</option>
+              <option value="cancelled">Отменена</option>
+            </select>
+
+            <label for="limit-select">Показывать по:</label>
+            <select id="limit-select">
+              <option value="10">10</option>
+              <option value="25" selected>25</option>
+              <option value="50">50</option>
+            </select>
+
+            <button id="sort-toggle" class="sort-btn" title="Сортировка по дате">
+              <i class="fas fa-sort-amount-down-alt"></i> Сначала новые
+            </button>
+          </div>
+
+          <ul id="olympiads-list" class="olympiads-list">
+            <div class="loader"></div>
+          </ul>
+
+          <div class="pagination" id="pagination"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="all-olympiads.js"></script>
+</body>
+</html>

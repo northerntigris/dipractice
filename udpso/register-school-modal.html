@@ -1,0 +1,181 @@
+<div id="register-school-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Регистрация образовательного учреждения</h2>
+        <p class="form-description">Заполните данные школы, чтобы уведомить её о присоединении к платформе.</p>
+        <form id="register-school-form">
+            <div class="form-section">
+                <h3>Наименование</h3>
+                <div class="form-group">
+                    <label for="school-full-name">Полное наименование на русском языке</label>
+                    <input type="text" id="school-full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="school-short-name">Краткое наименование на русском языке</label>
+                    <input type="text" id="school-short-name" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Место нахождения и адрес юридического лица</h3>
+                <div class="form-group">
+                    <label for="school-region">Субъект Российской Федерации</label>
+                    <select id="school-region" class="region-select" required>
+                        <option value="">Выберите субъект РФ</option>
+                        <option value="Республика Адыгея">Республика Адыгея</option>
+                        <option value="Республика Алтай">Республика Алтай</option>
+                        <option value="Республика Башкортостан">Республика Башкортостан</option>
+                        <option value="Республика Бурятия">Республика Бурятия</option>
+                        <option value="Республика Дагестан">Республика Дагестан</option>
+                        <option value="Донецкая Народная Республика">Донецкая Народная Республика</option>
+                        <option value="Республика Ингушетия">Республика Ингушетия</option>
+                        <option value="Кабардино-Балкарская Республика">Кабардино-Балкарская Республика</option>
+                        <option value="Республика Калмыкия">Республика Калмыкия</option>
+                        <option value="Карачаево-Черкесская Республика">Карачаево-Черкесская Республика</option>
+                        <option value="Республика Карелия">Республика Карелия</option>
+                        <option value="Республика Коми">Республика Коми</option>
+                        <option value="Республика Крым">Республика Крым</option>
+                        <option value="Луганская Народная Республика">Луганская Народная Республика</option>
+                        <option value="Республика Марий Эл">Республика Марий Эл</option>
+                        <option value="Республика Мордовия">Республика Мордовия</option>
+                        <option value="Республика Саха (Якутия)">Республика Саха (Якутия)</option>
+                        <option value="Республика Северная Осетия — Алания">Республика Северная Осетия — Алания</option>
+                        <option value="Республика Татарстан">Республика Татарстан</option>
+                        <option value="Республика Тыва">Республика Тыва</option>
+                        <option value="Удмуртская Республика">Удмуртская Республика</option>
+                        <option value="Республика Хакасия">Республика Хакасия</option>
+                        <option value="Чеченская Республика">Чеченская Республика</option>
+                        <option value="Чувашская Республика">Чувашская Республика</option>
+                        <option value="Алтайский край">Алтайский край</option>
+                        <option value="Забайкальский край">Забайкальский край</option>
+                        <option value="Камчатский край">Камчатский край</option>
+                        <option value="Краснодарский край">Краснодарский край</option>
+                        <option value="Красноярский край">Красноярский край</option>
+                        <option value="Пермский край">Пермский край</option>
+                        <option value="Приморский край">Приморский край</option>
+                        <option value="Ставропольский край">Ставропольский край</option>
+                        <option value="Хабаровский край">Хабаровский край</option>
+                        <option value="Амурская область">Амурская область</option>
+                        <option value="Архангельская область">Архангельская область</option>
+                        <option value="Астраханская область">Астраханская область</option>
+                        <option value="Белгородская область">Белгородская область</option>
+                        <option value="Брянская область">Брянская область</option>
+                        <option value="Владимирская область">Владимирская область</option>
+                        <option value="Волгоградская область">Волгоградская область</option>
+                        <option value="Вологодская область">Вологодская область</option>
+                        <option value="Воронежская область">Воронежская область</option>
+                        <option value="Запорожская область">Запорожская область</option>
+                        <option value="Ивановская область">Ивановская область</option>
+                        <option value="Иркутская область">Иркутская область</option>
+                        <option value="Калининградская область">Калининградская область</option>
+                        <option value="Калужская область">Калужская область</option>
+                        <option value="Кемеровская область — Кузбасс">Кемеровская область — Кузбасс</option>
+                        <option value="Кировская область">Кировская область</option>
+                        <option value="Костромская область">Костромская область</option>
+                        <option value="Курганская область">Курганская область</option>
+                        <option value="Курская область">Курская область</option>
+                        <option value="Ленинградская область">Ленинградская область</option>
+                        <option value="Липецкая область">Липецкая область</option>
+                        <option value="Магаданская область">Магаданская область</option>
+                        <option value="Московская область">Московская область</option>
+                        <option value="Мурманская область">Мурманская область</option>
+                        <option value="Нижегородская область">Нижегородская область</option>
+                        <option value="Новгородская область">Новгородская область</option>
+                        <option value="Новосибирская область">Новосибирская область</option>
+                        <option value="Омская область">Омская область</option>
+                        <option value="Оренбургская область">Оренбургская область</option>
+                        <option value="Орловская область">Орловская область</option>
+                        <option value="Пензенская область">Пензенская область</option>
+                        <option value="Псковская область">Псковская область</option>
+                        <option value="Ростовская область">Ростовская область</option>
+                        <option value="Рязанская область">Рязанская область</option>
+                        <option value="Самарская область">Самарская область</option>
+                        <option value="Саратовская область">Саратовская область</option>
+                        <option value="Сахалинская область">Сахалинская область</option>
+                        <option value="Свердловская область">Свердловская область</option>
+                        <option value="Смоленская область">Смоленская область</option>
+                        <option value="Тамбовская область">Тамбовская область</option>
+                        <option value="Тверская область">Тверская область</option>
+                        <option value="Томская область">Томская область</option>
+                        <option value="Тульская область">Тульская область</option>
+                        <option value="Тюменская область">Тюменская область</option>
+                        <option value="Ульяновская область">Ульяновская область</option>
+                        <option value="Херсонская область">Херсонская область</option>
+                        <option value="Челябинская область">Челябинская область</option>
+                        <option value="Ярославская область">Ярославская область</option>
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                        <option value="Севастополь">Севастополь</option>
+                        <option value="Еврейская автономная область">Еврейская автономная область</option>
+                        <option value="Ненецкий автономный округ">Ненецкий автономный округ</option>
+                        <option value="Ханты-Мансийский автономный округ — Югра">Ханты-Мансийский автономный округ — Югра</option>
+                        <option value="Чукотский автономный округ">Чукотский автономный округ</option>
+                        <option value="Ямало-Ненецкий автономный округ">Ямало-Ненецкий автономный округ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="school-address">Адрес юридического лица</label>
+                    <input type="text" id="school-address" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Сведения о регистрации</h3>
+                <div class="form-group">
+                    <label for="school-inn">ИНН</label>
+                    <input type="text" id="school-inn" required pattern="\d{10}|\d{12}">
+                </div>
+                <div class="form-group">
+                    <label for="school-ogrn">ОГРН</label>
+                    <input type="text" id="school-ogrn" required pattern="\d{13}">
+                </div>
+                <div class="form-group">
+                    <label for="school-ogrn-date">Дата регистрации</label>
+                    <input type="date" id="school-ogrn-date" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Сведения о руководителе</h3>
+                <div class="form-group">
+                    <label for="director-fio">Фамилия, имя, отчество</label>
+                    <input type="text" id="director-fio" required>
+                </div>
+                <div class="form-group">
+                    <label for="director-inn">ИНН</label>
+                    <input type="text" id="director-inn" required pattern="\d{12}">
+                </div>
+                <div class="form-group">
+                    <label for="director-position">Должность</label>
+                    <input type="text" id="director-position" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Контактные данные</h3>
+                <div class="form-group">
+                    <label for="school-contact-email">Email для связи</label>
+                    <input type="email" id="school-contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="school-contact-phone">Контактный телефон</label>
+                    <input type="tel" id="school-contact-phone" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Документы для уведомления</h3>
+                <div class="form-group">
+                    <label for="school-documents">Прикрепить документы для отправки школе</label>
+                    <input type="file" id="school-documents" name="verification_documents[]" multiple>
+                    <p class="form-hint">Поддерживаются PDF, изображения и документы Word.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+                <span>Сформировать уведомление школе</span>
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Настройки</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="dashboard">
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+      <div class="header-left">
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+          <i class="fas fa-bars"></i>
+          <span>Меню</span>
+        </button>
+        <h1 class="page-title">Настройки</h1>
+      </div>
+
+      <button class="back-btn" id="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Назад</span>
+      </button>
+    </div>
+
+
+      <div class="dashboard-content">
+        <div class="card">
+          <h3 class="card-title">Смена пароля</h3>
+
+          <form id="change-password-form">
+            <div class="form-group">
+              <label for="current-password">Текущий пароль</label>
+              <input type="password" id="current-password" required autocomplete="current-password">
+            </div>
+
+            <div class="form-group">
+              <label for="new-password">Новый пароль</label>
+              <input type="password" id="new-password" required autocomplete="new-password" minlength="8">
+              <small style="display:block;opacity:.75;margin-top:6px;">
+                Минимум 8 символов
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm-password">Повторите новый пароль</label>
+              <input type="password" id="confirm-password" required autocomplete="new-password" minlength="8">
+            </div>
+
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i>
+              <span>Сменить пароль</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Привязка email</h3>
+          <p class="muted-text">Текущий email: <span id="current-email">—</span></p>
+
+          <form id="email-link-form">
+            <div class="settings-row">
+              <div class="form-group">
+                <label for="email-address">Email</label>
+                <input type="email" id="email-address" required autocomplete="email">
+              </div>
+              <button type="submit" class="btn-primary" id="send-email-code">
+                <i class="fas fa-paper-plane"></i>
+                <span>Отправить код</span>
+              </button>
+            </div>
+          </form>
+
+          <div id="email-code-section" class="email-code-section" hidden>
+            <div class="settings-row">
+              <div class="form-group">
+                <label for="email-code">Код подтверждения</label>
+                <input type="text" id="email-code" inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+              </div>
+              <button type="button" class="btn-primary" id="confirm-email-code">
+                <i class="fas fa-check"></i>
+                <span>Подтвердить</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="muted-text" id="email-helper"></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="settings.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

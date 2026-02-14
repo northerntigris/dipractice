@@ -1,0 +1,14 @@
+
+/* Стиль подвала при свернутом сайдбаре */
+.site-footer.collapsed {
+    margin-left: var(--sidebar-collapsed-width); /* Уменьшенный отступ слева */
+}
+
+/* Нижняя часть подвала */
+.footer-bottom {
+    text-align: center; /* Центрирование текста */
+    padding: 20px 0; /* Отступы */
+    margin-top: 30px; /* Отступ сверху */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Верхняя граница */
+    font-size: 0.75rem; /* Размер шрифта */
+}

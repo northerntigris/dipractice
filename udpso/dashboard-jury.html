@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель жюри</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-page="dashboard">
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <div class="content-header">
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+          <i class="fas fa-bars"></i>
+          <span>Меню</span>
+        </button>
+        <h1 class="page-title">Личный кабинет</h1>
+      </div>
+      <p class="welcome-message" id="welcome-message">Добро пожаловать, ...</p>
+
+      <div class="dashboard-content">
+        <div class="dashboard-grid">
+          <div class="card quick-actions">
+            <h3 class="card-title">Быстрые действия</h3>
+            <div class="actions-grid">
+              <button class="action-btn" id="settings">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="dashboard-section">
+          <h2 class="card-title">Новые апелляции</h2>
+          <ul id="jury-appeals-list" class="olympiads-list">
+            <div class="loader"></div>
+          </ul>
+        </section>
+
+        <section class="dashboard-section">
+          <h2 class="card-title">Мои олимпиады</h2>
+          <ul id="jury-olympiads-list" class="olympiads-list">
+            <div class="loader"></div>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </div>
+
+
+  <div class="modal" id="jury-appeal-modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Рассмотрение апелляции</h3>
+        <button type="button" class="modal-close" id="close-jury-appeal-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="jury-appeal-modal-body"></div>
+      <form class="modal-footer jury-appeal-response" id="jury-appeal-response-form">
+        <input type="hidden" id="jury-appeal-id" name="appeal_id" />
+        <div class="jury-appeal-response-card">
+          <div class="jury-appeal-response-title">Ответ жюри по апелляции</div>
+          <div class="jury-appeal-response-fields">
+            <label class="textarea-field" style="width:100%;">
+              <span>Комментарий по решению жюри</span>
+              <textarea id="jury-appeal-comment" name="comment" rows="3" placeholder="Введите комментарий"></textarea>
+            </label>
+            <label>
+              Новые баллы (необязательно)
+              <input type="number" id="jury-appeal-score" name="score" step="0.01" min="0" max="100" />
+            </label>
+            <label>
+              Прикрепить материалы ответа
+              <input type="file" id="jury-appeal-files" name="files[]" multiple />
+            </label>
+            <button type="submit" class="btn-action btn-primary jury-appeal-submit">Отправить ответ по апелляции</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="dashboard-jury.js"></script>
+</body>
+</html>

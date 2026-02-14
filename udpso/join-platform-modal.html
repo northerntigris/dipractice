@@ -1,0 +1,79 @@
+<div id="join-platform-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Заявка на присоединение к платформе</h2>
+        <form id="join-platform-form">
+            <div class="form-section">
+                <h3>Наименование</h3>
+                <div class="form-group">
+                    <label for="platform-full-name">Полное наименование на русском языке</label>
+                    <input type="text" id="platform-full-name" name="full_name" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Место нахождения и адрес юридического лица</h3>
+                <div class="form-group">
+                    <label for="platform-address">Адрес юридического лица</label>
+                    <input type="text" id="platform-address" name="address" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Сведения о регистрации</h3>
+                <div class="form-group">
+                    <label for="platform-ogrn">ОГРН</label>
+                    <input type="text" id="platform-ogrn" name="ogrn" required pattern="\d{13}">
+                </div>
+                <div class="form-group">
+                    <label for="platform-registration-date">Дата регистрации</label>
+                    <input type="date" id="platform-registration-date" name="registration_date" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Сведения о лице, имеющем право без доверенности действовать от имени юридического лица</h3>
+                <div class="form-group">
+                    <label for="platform-director-fio">Фамилия, имя, отчество</label>
+                    <input type="text" id="platform-director-fio" name="director_fio" required>
+                </div>
+                <div class="form-group">
+                    <label for="platform-director-inn">ИНН</label>
+                    <input type="text" id="platform-director-inn" name="director_inn" required pattern="\d{12}">
+                </div>
+                <div class="form-group">
+                    <label for="platform-director-position">Должность</label>
+                    <input type="text" id="platform-director-position" name="director_position" required>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Контактные данные</h3>
+
+                <div class="form-group">
+                    <label for="platform-contact-email">Email для связи</label>
+                    <input type="email" id="platform-contact-email" name="contact_email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="platform-contact-phone">Контактный телефон</label>
+                    <input type="tel" id="platform-contact-phone" name="contact_phone" required>
+                </div>
+            </div>
+
+                
+            <div class="form-section">
+                <h3>Документы для подтверждения полномочий</h3>
+                <div class="form-group">
+                    <label for="platform-documents">Загрузить документы для верификации полномочий</label>
+                    <input type="file" id="platform-documents" name="verification_documents[]" multiple>
+                    <p class="form-hint">Поддерживаются PDF, изображения и документы Word.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+                <span>Отправить заявку на присоединение</span>
+            </button>
+        </form>
+    </div>
+</div>

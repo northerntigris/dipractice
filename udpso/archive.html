@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Единая цифровая платформа школьных олимпиад</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="archive">
+    <div class="container">
+        <main class="main-content" id="main-content">
+            <div class="content-header">
+                <button class="mobile-toggle-btn" id="mobile-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                    <span>Меню</span>
+                </button>
+                <h1 class="page-title">Архив олимпиад</h1>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Архив олимпиад</h2>
+                <div class="filter-card archive-filters-grid">
+                    <div class="archive-filter-field">
+                        <label for="archive-region-search">Регион:</label>
+                        <div class="region-select" id="archive-region-select">
+                            <button type="button" class="region-select__toggle" id="archive-region-toggle">
+                                Выберите регион
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="region-select__dropdown" id="archive-region-dropdown">
+                                <div class="region-select__search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" id="archive-region-search" placeholder="Быстрый поиск региона">
+                                </div>
+                                <ul class="region-select__options" id="archive-region-options"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="archive-filter-field">
+                        <label for="archive-school-filter">Школа:</label>
+                        <input type="text" id="archive-school-filter" placeholder="Поиск по школе">
+                    </div>
+                    <div class="archive-filter-field">
+                        <label for="archive-classes-filter">Классы:</label>
+                        <input type="text" id="archive-classes-filter" placeholder="Например: 7-8 или 10">
+                    </div>
+                    <div class="archive-filter-field">
+                        <label for="archive-datetime-filter">Дата и время:</label>
+                        <input type="datetime-local" id="archive-datetime-filter">
+                    </div>
+                </div>
+                <div class="olympiad-list" id="archive-list"></div>
+
+                <p class="empty-state hidden" id="archive-empty">
+                    Нет олимпиад в выбранном регионе.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js" type="module"></script>
+    <script src="archive.js" type="module"></script>
+</body>
+</html>
